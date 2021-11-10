@@ -13,8 +13,9 @@ employeeForm: FormGroup;
 
   ngOnInit() {
     this.employeeForm=this.fb.group({
-      fullName: [''],
+      fullName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
       email: [''],
+      phoneno : [''],
       //create skill form Group
       skills : this.fb.group({
         skillName: [''],
@@ -27,6 +28,7 @@ employeeForm: FormGroup;
     this.employeeForm.patchValue({
       fullName : 'Chandrashekhar Yadav',
       email : 'chandrashekhar9506@gmail.com',
+      phoneno: '8975221916',
       skills :{
         skillName : 'C#',
         experienceInYears : '5.8',
